@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\examanswers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\examanswers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -73,7 +77,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 181,
+          "DockedHeight": 84,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -84,14 +88,14 @@
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
               "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\AnswersController.cs",
               "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T04:32:51.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
@@ -103,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\Question.cs",
               "RelativeDocumentMoniker": "Models\u200B\\Question.cs",
@@ -115,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "QuestionsController.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
@@ -127,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
@@ -139,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Questions\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Questions\\Edit.cshtml",
@@ -151,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Questions\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Questions\\Index.cshtml",
@@ -163,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Exams\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Exams\\Index.cshtml",
@@ -175,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Subject.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\Subject.cs",
               "RelativeDocumentMoniker": "Models\u200B\\Subject.cs",
@@ -187,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SubjectsController.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Controllers\\SubjectsController.cs",
               "RelativeDocumentMoniker": "Controllers\\SubjectsController.cs",
@@ -199,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "SubjectsController.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\SubjectsController.cs",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\SubjectsController.cs",
@@ -211,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ExamsController.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\ExamsController.cs",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\ExamsController.cs",
@@ -223,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
@@ -235,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Questions\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Questions\\Edit.cshtml",
@@ -247,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\ExamResults\\Delete.cshtml",
@@ -259,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\ExamResults\\Edit.cshtml",
@@ -272,8 +276,8 @@
           ]
         },
         {
-          "DockedHeight": 59,
-          "SelectedChildIndex": -1,
+          "DockedHeight": 156,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -282,6 +286,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\ExamAnswers\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\ExamAnswers\\Create.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\ExamAnswers\\Create.cshtml",
+              "RelativeToolTip": "Views\\ExamAnswers\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-27T06:14:16.807Z",
+              "EditorCaption": ""
             }
           ]
         }
