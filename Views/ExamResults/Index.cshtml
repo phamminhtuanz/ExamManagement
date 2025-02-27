@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ExamManagement.Models.ExamResult>
+
+@{
+    ViewData["Title"] = "Danh Sách Kết Quả";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int currentPage = ViewBag.Page;
+    int totalPages = ViewBag.TotalPages;
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Danh Sách Kết Quả</h2>
+    <table class="table table-striped table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Tên Sinh Viên</th>
+                <th scope="col">Kỳ Thi</th>
+                <th scope="col">Môn Học</th>
+                <th scope="col">Điểm</th>
+                <th scope="col">Ngày Nộp</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Student.FullName</td>
+                    <td>@item.Exam.Title</td>
+                    <td>@item.Exam.Subject.SubjectName</td>
+                    <td>@item.Score</td>
+                    <td>@item.SubmittedAt</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Phân trang -->
+    <nav>
+        <ul class="pagination justify-content-center">
+            @if (currentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })">Trước</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                </li>
+            }
+
+            @if (currentPage < totalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })">Sau</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

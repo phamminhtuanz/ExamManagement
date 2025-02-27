@@ -1,0 +1,74 @@
+﻿@model ExamManagement.Models.Subject
+
+@{
+    ViewData["Title"] = "Xóa Môn học"; // Vietnamese title
+    Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
+}
+
+<h1>Xóa Môn học</h1>  
+
+<h3>Bạn có chắc chắn muốn xóa mục này?</h3>  
+<div>
+    <h4>Môn học</h4>  
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubjectName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SubjectId" />
+        <input type="submit" value="Xóa" class="btn btn-danger" />    
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>    
+    </form>
+</div>
+
+<style>
+    body {
+        background-color: #ffffff;
+    }
+
+    h1, h3, h4 {
+        color: #404080;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #404080;
+    }
+
+    dd {
+        margin-bottom: 1rem;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: darken(#dc3545, 10%);
+            border-color: darken(#dc3545, 10%);
+        }
+
+    .btn-secondary {
+        background-color: #404080;
+        border-color: #404080;
+        color: #ffffff;
+    }
+
+        .btn-secondary:hover {
+            background-color: darken(#404080, 10%);
+            border-color: darken(#404080, 10%);
+        }
+</style>

@@ -1,0 +1,243 @@
+﻿﻿﻿﻿@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #404080;
+    }
+
+    /* Sidebar */
+    .main-sidebar {
+        background-color: #404080 !important; /* Xanh đậm */
+        color: #ffffff; /* Trắng */
+        width: 250px;
+    }
+
+        .main-sidebar a {
+            color: #ffffff;
+        }
+
+        .main-sidebar .brand-link {
+            background-color: #ff9000 !important; /* Cam */
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+    .brand-link img {
+        border-radius: 5px;
+    }
+
+    /* Sidebar User Panel */
+    .user-panel {
+        background-color: #ff9000 !important; /* Cam */
+        color: #ffffff;
+        padding: 10px;
+        border-top: 2px solid #ffffff;
+    }
+
+        .user-panel .info a {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+    /* Sidebar Navigation */
+    .nav-sidebar .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-sidebar .nav-link {
+        color: #ffffff;
+        background-color: transparent;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+        .nav-sidebar .nav-link:hover {
+            background-color: #ff9000 !important; /* Cam */
+            color: #ffffff;
+        }
+
+    /* Icons */
+    .nav-sidebar .nav-icon {
+        color: #ffffff;
+    }
+
+    /* Dropdown Menu */
+    .nav-treeview {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+        .nav-treeview .nav-link {
+            color: #ffffff;
+            padding-left: 30px;
+        }
+
+            .nav-treeview .nav-link:hover {
+                background-color: #ff9000 !important;
+            }
+
+    /* Active State */
+    .nav-sidebar .nav-item .nav-link.active {
+        background-color: #ff9000 !important;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+</style>
+<aside class="main-sidebar sidebar-custom elevation-4 position-fixed">
+    <!-- Brand Logo -->
+    <a href="/adminmanagement/dashboard" class="brand-link" style="background-color: #ed3d34; color: white;">
+        <img src="~/images/logo.png" alt="Logo Hunre" width="75px">
+        <span class="brand-text font-weight-light ms-2">Quản lý</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel -->
+        @* <div class="user-panel mt-3 pb-3 mb-3 d-flex position-fixed bottom-0" style="border-top: 1px solid #f7b1ae;">
+            <div class="image">
+                <img src="~/images/Logo.png" class="img-circle elevation-2" alt="Logo-Hunre">
+            </div>
+             <div class="info">
+                @{
+                    if (HttpContextAccessor.HttpContext.Session.GetString("AdminLogin") != null)
+                    {
+                        <a href="#" class="d-block">@HttpContextAccessor.HttpContext.Session.GetString("AdminLogin")</a>
+                        <a asp-action="Logout" asp-controller="Login" class="logout-link">Đăng xuất</a>
+                    }
+                    else
+                    {
+                        <a href="#" class="d-block">Phạm Minh Tuấn</a>
+                    }
+                }
+            </div> 
+        </div> *@
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Menu Item Template -->
+                <li class="nav-item">
+                    <a href="/adminmanagement/admins" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-user-shield fa-xl"></i> <!-- Icon Tài khoản Admin -->
+                            </div>
+                            <p class="ms-3">
+                                Tài khoản Admin
+                            </p>
+                        </div>
+                    </a>
+                    @* <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/adminmanagement/admins" class="nav-link">
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Danh sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/adminmanagement/admins/create" class="nav-link">
+                                <i class="fas fa-user-plus nav-icon"></i>
+                                <p>Thêm</p>
+                            </a>
+                        </li>
+                    </ul> *@
+                </li>
+
+                <li class="nav-item">
+                    <a href="/adminmanagement/students" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-users fa-xl"></i> <!-- Icon Quản lý học sinh -->
+                            </div>
+                            <p class="ms-3">
+                                Tài khoản học sinh
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/adminmanagement/subjects/" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-book-open fa-xl"></i> <!-- Icon Quản lý môn học -->
+                            </div>
+                            <p class="ms-3">
+                                Quản lý môn học
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                
+                <li class="nav-item">
+                    <a href="/adminmanagement/exams" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-file-alt fa-xl"></i> <!-- Icon Quản lý đề kiểm tra -->
+                            </div>
+                            <p class="ms-3">
+                                Quản lý đề kiểm tra
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/adminmanagement/questions" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-file-alt fa-xl"></i> <!-- Icon Quản lý đề kiểm tra -->
+                            </div>
+                            <p class="ms-3">
+                                Quản lý câu hỏi
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/adminmanagement/answers" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-file-circle-check fa-xl"></i>
+
+                                <!-- Icon Quản lý đề kiểm tra -->
+                            </div>
+                            <p class="ms-3">
+                                Quản lý đáp án
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/adminmanagement/examresults" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-chart-line fa-xl"></i> <!-- Icon Quản lý kết quả thi -->
+                            </div>
+                            <p class="ms-3">
+                                Quản lý kết quả thi
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Login" asp-action="Logout" class="nav-link">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-right-from-bracket fa-xl"></i> <!-- Icon đăng xuất -->
+                            </div>
+                            <p class="ms-3">Đăng xuất</p>
+                        </div>
+                    </a>
+                </li>
+
+
+               
+            </ul>
+        </nav>
+    </div>
+</aside>

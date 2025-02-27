@@ -1,0 +1,168 @@
+﻿@model ExamManagement.Models.LoginC
+
+@{
+    Layout =null;
+}
+
+
+<style>
+    body {
+        background-image: url("../images/Nen.jpg"); /* Ảnh nền */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-box {
+        width: 400px;
+        background: rgba(255, 255, 255, 0.9); /* Màu trắng trong suốt */
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        border: 1px solid #ff9000;
+    }
+
+    .login-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group-text {
+        background: #eee;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .form-control {
+        border-radius: 0 8px 8px 0;
+        height: 45px;
+    }
+
+    .form-check {
+        display: flex !important;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .custom-input {
+        border-radius: 8px;
+        margin-top: 10px;
+        height: 45px;
+        padding-left: 15px;
+        font-size: 16px;
+        border: 1px solid #404080;
+    }
+
+        .custom-input:focus {
+            border-color: #ff9000;
+            box-shadow: 0 0 5px rgba(255, 144, 0, 0.5);
+        }
+
+    .btn-primary_b {
+        width: 100%;
+        border-radius: 8px;
+        background-color: #404080 !important;
+        border: none;
+        padding: 12px;
+        color: white !important;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+        transition: 0.3s ease-in-out;
+    }
+
+        .btn-primary_b:hover {
+            
+            transform: scale(1.05);
+        }
+
+</style>
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<div class="login-box">
+    <div class="login-title">Đăng nhập</div>
+
+    @if (!ViewData.ModelState.IsValid)
+
+
+
+    {
+        <div class="alert alert-danger mt-3">
+            <ul>
+                @foreach (var modelState in ViewData.ModelState.Values)
+
+
+
+                {
+
+
+
+                    foreach (var error in modelState.Errors)
+
+
+
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+
+
+
+                }
+            </ul>
+        </div>
+    }
+    <form asp-action="Index" method="post">
+        
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+            <input asp-for="Email" type="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Mật khẩu" required>
+        </div>
+        <!-- Nhớ mật khẩu -->
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe" style="margin-right:10px;display:flex">
+            <label class="form-check-label" for="rememberMe">Nhớ mật khẩu</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary_b">Đăng nhập</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script lưu nhớ mật khẩu -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (localStorage.getItem("rememberMe") === "true") {
+            document.getElementById("rememberMe").checked = true;
+            document.querySelector("input[name='Email']").value = localStorage.getItem("savedEmail");
+            document.querySelector("input[name='Password']").value = localStorage.getItem("savedPassword");
+        }
+
+        document.querySelector("form").addEventListener("submit", function () {
+            if (document.getElementById("rememberMe").checked) {
+                localStorage.setItem("rememberMe", "true");
+                localStorage.setItem("savedEmail", document.querySelector("input[name='Email']").value);
+                localStorage.setItem("savedPassword", document.querySelector("input[name='Password']").value);
+            } else {
+                localStorage.removeItem("rememberMe");
+                localStorage.removeItem("savedEmail");
+                localStorage.removeItem("savedPassword");
+            }
+        });
+    });
+</script>

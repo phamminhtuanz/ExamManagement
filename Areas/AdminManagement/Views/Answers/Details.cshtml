@@ -1,0 +1,77 @@
+﻿@model ExamManagement.Models.Answer
+
+@{
+    ViewData["Title"] = "Chi tiết Câu trả lời"; // Vietnamese title
+    Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
+}
+
+<h1>Chi tiết Câu trả lời</h1>  
+
+<div>
+    <h4>Câu trả lời</h4>  
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsCorrect)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsCorrect)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Question)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Question.Content)  
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AnswerId" class="btn btn-sm btn-warning">Sửa</a>   
+    <a asp-action="Index" class="btn btn-sm btn-secondary">Quay lại danh sách</a>   
+</div>
+
+<style>
+    body {
+        background-color: #ffffff;
+    }
+
+    h1, h4 {
+        color: #404080;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #404080;
+    }
+
+    dd {
+        margin-bottom: 1rem;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+        .btn-warning:hover {
+            background-color: darken(#ffc107, 10%);
+            border-color: darken(#ffc107, 10%);
+        }
+
+    .btn-secondary {
+        background-color: #404080;
+        border-color: #404080;
+        color: #ffffff;
+    }
+
+        .btn-secondary:hover {
+            background-color: darken(#404080, 10%);
+            border-color: darken(#404080, 10%);
+        }
+</style>

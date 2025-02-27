@@ -1,0 +1,100 @@
+﻿@model ExamManagement.Models.Exam
+
+@{
+    ViewData["Title"] = "Sửa Bài thi"; // Vietnamese title
+    Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
+}
+
+<h1>Sửa Bài thi</h1>  
+
+<h4>Bài thi</h4>  
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ExamId" />
+            <div class="form-group">
+                <label asp-for="SubjectId" class="control-label">Môn học</label>   
+                <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.SubjectId"></select>
+                <span asp-validation-for="SubjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Tiêu đề</label>   
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label">Thời lượng</label>   
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label">Ngày tạo</label>   
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedBy" class="control-label">Người tạo</label>   
+                <select asp-for="CreatedBy" class="form-control" asp-items="ViewBag.CreatedBy"></select>
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />   
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        background-color: #ffffff;
+    }
+
+    h1, h4 {
+        color: #404080;
+    }
+
+    label {
+        color: #404080;
+    }
+
+    .form-control {
+        border-color: #404080;
+    }
+
+    .btn-primary {
+        background-color: #ff9000;
+        border-color: #ff9000;
+    }
+
+        .btn-primary:hover {
+            background-color: darken(#ff9000, 10%);
+            border-color: darken(#ff9000, 10%);
+        }
+
+    .btn-secondary {
+        background-color: #404080;
+        border-color: #404080;
+        color: #ffffff;
+    }
+
+        .btn-secondary:hover {
+            background-color: darken(#404080, 10%);
+            border-color: darken(#404080, 10%);
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>

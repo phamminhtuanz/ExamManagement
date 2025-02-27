@@ -1,0 +1,142 @@
+﻿@model IEnumerable<ExamManagement.Models.Exam>
+
+@{
+    ViewData["Title"] = "Danh sách Đề thi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Container cho danh sách đề thi */
+    .exam-card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Thẻ đề thi */
+    .exam-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        overflow: hidden;
+        border: 1px solid #ff9000;
+    }
+
+        .exam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Header của đề thi */
+    .card-header {
+        background: linear-gradient(135deg, #ff9000, #ff6a00);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Nội dung bên trong */
+    .card-body {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #404080;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    /* Nút bấm */
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .btn-primary {
+        background-color: #ff9000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            background-color: #e68000;
+            transform: scale(1.05);
+        }
+</style>
+
+@using (Html.BeginForm("Index", "Exams", FormMethod.Get))
+{
+    <div class="row my-3">
+        <div class="col-md-6">
+            <select name="subjectId" class="form-select">
+                <option value="">-- Chọn môn học --</option>
+                @foreach (var subject in ViewBag.Subjects)
+                {
+                    <option value="@subject.SubjectId" selected="@(subject.SubjectId == ViewBag.SelectedSubjectId ? "selected" : null)">
+                        @subject.SubjectName
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        </div>
+    </div>
+}
+
+<h1>Danh sách Đề thi</h1>
+
+<div class="exam-card-container">
+    @if (Model.Any())
+    {
+        @foreach (var item in Model)
+        {
+            <div class="exam-card">
+                <div class="card-header">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Thông tin</h5>
+                    <p class="card-text"><strong>Thời lượng:</strong> @Html.DisplayFor(modelItem => item.Duration) phút</p>
+                    <p class="card-text"><strong>Ngày tạo:</strong> @Html.DisplayFor(modelItem => item.CreatedAt)</p>
+                    <p class="card-text"><strong>Người tạo:</strong> @Html.DisplayFor(modelItem => item.CreatedByNavigation.FullName)</p>
+                    <p class="card-text"><strong>Môn học:</strong> @Html.DisplayFor(modelItem => item.Subject.SubjectName)</p>
+                    <div class="btn-group text-center">
+                        <a asp-controller="Questions" asp-action="Index" asp-route-examId="@item.ExamId" asp-route-eId="@item.Subject.SubjectId" asp-route-sId="@item.Duration" class="btn btn-primary" style="text-align:center">Tham gia</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+    else
+    {
+        <p class="text-muted">Không tìm thấy đề thi nào.</p>
+    }
+</div>
+<!-- Thêm Bootstrap CSS và JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

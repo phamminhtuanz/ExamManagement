@@ -1,0 +1,54 @@
+﻿@model ExamManagement.Models.Student
+
+@{
+    ViewData["Title"] = "Chi tiết Sinh Viên";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+        <div class="card-header bg-gradient text-center py-4" style="background: linear-gradient(45deg, #007bff, #6610f2);">
+            <h2 class="mb-0 text-dark fw-bold">Thông Tin Sinh Viên</h2>
+        </div>
+        <div class="card-body p-5">
+            <dl class="row mb-0 align-items-center">
+                <dt class="col-sm-4 fw-bold text-primary d-flex align-items-center">
+                    <i class="bi bi-person-circle me-2 fs-5"></i> Tên đăng nhập
+                </dt>
+                <dd class="col-sm-8 text-dark fs-5">
+                    @Html.DisplayFor(model => model.Username)
+                </dd>
+                <dt class="col-sm-4 fw-bold text-primary d-flex align-items-center">
+                    <i class="bi bi-building me-2 fs-5"></i> Trường học
+                </dt>
+                <dd class="col-sm-8 text-dark fs-5">
+                    @Html.DisplayFor(model => model.School)
+                </dd>
+                <dt class="col-sm-4 fw-bold text-primary d-flex align-items-center">
+                    <i class="bi bi-person-badge me-2 fs-5"></i> Họ và tên
+                </dt>
+                <dd class="col-sm-8 text-dark fs-5">
+                    @Html.DisplayFor(model => model.FullName)
+                </dd>
+                <dt class="col-sm-4 fw-bold text-primary d-flex align-items-center">
+                    <i class="bi bi-envelope me-2 fs-5"></i> Email
+                </dt>
+                <dd class="col-sm-8 text-dark fs-5">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center bg-light py-4">
+            <form method="get" asp-action="Edit">
+                <input type="hidden" name="id" value="@Model?.StudentId" />
+                <button type="submit" class="btn btn-lg btn-warning shadow-sm px-4">
+                    <i class="bi bi-pencil-square me-2"></i> Chỉnh sửa
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Đảm bảo đã thêm Bootstrap Icons vào dự án -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

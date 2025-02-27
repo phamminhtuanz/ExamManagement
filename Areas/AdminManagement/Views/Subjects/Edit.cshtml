@@ -1,0 +1,85 @@
+﻿@model ExamManagement.Models.Subject
+
+@{
+    ViewData["Title"] = "Sửa Môn học"; // Vietnamese title
+    Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
+}
+
+<h1>Sửa Môn học</h1>  
+
+<h4>Môn học</h4>  
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SubjectId" />
+            <div class="form-group">
+                <label asp-for="SubjectName" class="control-label">Tên môn học</label>   
+                <input asp-for="SubjectName" class="form-control" />
+                <span asp-validation-for="SubjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Mô tả</label>   
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />   
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        background-color: #ffffff;
+    }
+
+    h1, h4 {
+        color: #404080;
+    }
+
+    label {
+        color: #404080;
+    }
+
+    .form-control {
+        border-color: #404080;
+    }
+
+    .btn-primary {
+        background-color: #ff9000;
+        border-color: #ff9000;
+    }
+
+        .btn-primary:hover {
+            background-color: darken(#ff9000, 10%);
+            border-color: darken(#ff9000, 10%);
+        }
+
+    .btn-secondary {
+        background-color: #404080;
+        border-color: #404080;
+        color: #ffffff;
+    }
+
+        .btn-secondary:hover {
+            background-color: darken(#404080, 10%);
+            border-color: darken(#404080, 10%);
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>

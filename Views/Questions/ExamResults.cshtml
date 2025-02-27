@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Exam Results";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (ViewBag.Score != null)
+{
+    <p>Your score: <strong>@ViewBag.Score</strong></p>
+}
+else
+{
+    <p>No score available.</p>
+}
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to Home</a>

@@ -1,0 +1,86 @@
+﻿@model ExamManagement.Models.Student
+
+@{
+    ViewData["Title"] = "Chỉnh sửa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- CSS tùy chỉnh theo bảng màu -->
+<style>
+    body {
+        background-color: #ffffff;
+        color: #404080;
+    }
+
+    h1 {
+        color: #ff9000;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        color: #ff9000;
+    }
+
+    .btn-custom {
+        background-color: #ff9000;
+        border-color: #ff9000;
+        color: #ffffff;
+    }
+
+        .btn-custom:hover {
+            background-color: #404080;
+            border-color: #404080;
+        }
+</style>
+
+<h1>Chỉnh sửa</h1>
+
+<h4>Sinh viên</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentId" />
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="School" class="control-label"></label>
+                <input asp-for="School" class="form-control" />
+                <span asp-validation-for="School" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-custom" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a onclick="window.history.back();">Trở lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

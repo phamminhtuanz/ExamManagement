@@ -1,0 +1,128 @@
+﻿@model ExamManagement.Models.Student
+
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #ffffff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .registration-box {
+        width: 500px; /* Increased width for better form layout */
+        margin: auto;
+        margin-top: 50px; /* Reduced margin-top for better spacing */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        border: 1px solid #ff9000;
+    }
+
+    .registration-title {
+        font-weight: 700;
+        font-size: 28px;
+        color: #ff9000;
+        margin-bottom: 20px;
+        font-family: 'Cursive', sans-serif;
+        text-align: center; /* Center the title */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        color: #404080; /* Purple label color */
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #404080;
+    }
+
+        .form-control:focus {
+            border-color: #ff9000;
+            box-shadow: 0 0 5px rgba(255, 144, 0, 0.5);
+        }
+
+    .btn-primary {
+        width: 100%;
+        border-radius: 8px;
+        background-color: #ff9000;
+        border: none;
+        padding: 12px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #e68000;
+        }
+
+    .text-danger {
+        color: #f00; /* Standard red for validation errors */
+    }
+
+    .back-to-list {
+        margin-top: 20px;
+        text-align: center; /* Center the "Back to List" link */
+    }
+
+        .back-to-list a {
+            color: #404080; /* Purple link color */
+        }
+</style>
+
+<div class="registration-box">
+    <div class="registration-title">Đăng ký Tài khoản Sinh viên</div>
+
+    <form asp-action="Create" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Username" class="control-label">Tên đăng nhập</label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="control-label">Mật khẩu</label>
+            <input asp-for="Password" type="password" class="form-control" />  <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="School" class="control-label">Trường học</label>
+            <input asp-for="School" class="form-control" />
+            <span asp-validation-for="School" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FullName" class="control-label">Họ và Tên</label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Đăng ký" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
