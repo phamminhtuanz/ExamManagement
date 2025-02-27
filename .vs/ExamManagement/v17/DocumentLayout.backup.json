@@ -82,9 +82,9 @@
               "Title": "AnswersController.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\AnswersController.cs",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
-              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\AnswersController.cs*",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AnswersController.cs*",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\AnswersController.cs",
+              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T04:32:51.801Z",
               "EditorCaption": ""
@@ -99,8 +99,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T04:31:40.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:31:40.054Z"
             },
             {
               "$type": "Document",
@@ -112,8 +111,7 @@
               "RelativeToolTip": "Models\u200B\\Question.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T04:28:10.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:28:10.914Z"
             },
             {
               "$type": "Document",
@@ -125,8 +123,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAzwCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T04:25:42.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:25:42.18Z"
             },
             {
               "$type": "Document",
@@ -138,8 +135,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T04:25:14.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:25:14.691Z"
             },
             {
               "$type": "Document",
@@ -151,8 +147,7 @@
               "RelativeToolTip": "Views\\Questions\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T04:24:58.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:24:58.218Z"
             },
             {
               "$type": "Document",
@@ -164,8 +159,7 @@
               "RelativeToolTip": "Views\\Questions\\Index.cshtml",
               "ViewState": "AgIAAFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T04:24:19.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:24:19.827Z"
             },
             {
               "$type": "Document",
@@ -177,8 +171,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\Exams\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T04:20:00.978Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:20:00.978Z"
             },
             {
               "$type": "Document",
@@ -190,8 +183,7 @@
               "RelativeToolTip": "Models\u200B\\Subject.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T04:15:34.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:15:34.358Z"
             },
             {
               "$type": "Document",
@@ -203,8 +195,7 @@
               "RelativeToolTip": "Controllers\\SubjectsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T04:15:29.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:15:29.927Z"
             },
             {
               "$type": "Document",
@@ -216,8 +207,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\SubjectsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T04:15:26.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:15:26.012Z"
             },
             {
               "$type": "Document",
@@ -229,8 +219,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\ExamsController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAEwCQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T04:11:54.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:11:54.315Z"
             },
             {
               "$type": "Document",
@@ -242,8 +231,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T04:02:20.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T04:02:20.159Z"
             },
             {
               "$type": "Document",
@@ -255,8 +243,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\Questions\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T03:59:27.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T03:59:27.045Z"
             },
             {
               "$type": "Document",
@@ -268,8 +255,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\ExamResults\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T03:54:31.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T03:54:31.808Z"
             },
             {
               "$type": "Document",
@@ -281,8 +267,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\ExamResults\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T03:56:38.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T03:56:38.217Z"
             }
           ]
         },
