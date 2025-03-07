@@ -139,9 +139,7 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Exams" asp-action="Index">Đề thi</a> @* Vietnamese *@
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="ExamAnswers" asp-action="Index">xem bài thi</a> @* Vietnamese *@
-                        </li>
+
                         @if (Context.Session.GetString("CustomerLogin") != null)
                         {
                             <li class="nav-item">

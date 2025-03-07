@@ -3,212 +3,176 @@
 @{
     ViewBag.Title = "Thi";
 
-    int duration = ViewBag.Duration; // Lấy thời gian thi từ ViewBag
+
+
+    int duration = ViewBag.Duration;
+
+
 
     int examId = ViewBag.ExamId;
 
+
+
     int studentId = ViewBag.StudentId;
+
+
+
+    int STT_CH = 1;
 }
+
+
 <style>
-    body {
-        background-color: #f8f9fa;
-        font-family: Arial, sans-serif;
-    }
-
-    .container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-        color: #007bff;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        background: #fff;
-    }
-
-        .card h5 {
-            color: #333;
-            font-weight: bold;
-        }
-
-    .form-check {
-        margin: 10px 20px;
-        padding: 5px;
-        border-radius: 5px;
+    .form-check:hover {
+        background: #f1f1f1;
         transition: background 0.3s;
     }
 
-        .form-check:hover {
-            background: #f1f1f1;
-        }
-
-    .btn-success {
-        font-size: 18px;
-        padding: 10px;
-        border-radius: 5px;
-        font-weight: bold;
-    }
-
     #timer {
-        font-size: 22px;
-        font-weight: bold;
         background: #ffdddd;
-        padding: 10px;
-        border-radius: 5px;
-        display: inline-block;
-        margin: 10px auto;
     }
 
     #scoreDisplay {
-        font-size: 24px;
-        font-weight: bold;
         color: green;
     }
 </style>
-<div class="container">
-    <h2 class="text-center mt-3">📖 Bài thi</h2>
 
-    <div class="card p-3 mb-3">
-        <h4 class="text-primary"><i class="fa-solid fa-file"></i> Mã đề thi: @examId</h4>
-        <h4 class="text-success"><i class="fa-solid fa-clock"></i> Thời gian làm bài: @duration phút</h4>
-        <h4 class="text-info"><i class="fa-solid fa-user"></i> Mã sinh viên: @studentId</h4>
-    </div>
+<body class="bg-light">
+    <div class="container my-4">
+        <h2 class="text-center text-primary mt-3">📖 Bài thi</h2>
 
-    <div id="timer" class="text-center text-danger" style="font-size: 24px; font-weight: bold;">
-        ⏳ Thời gian còn lại: <span id="timeDisplay"></span>
-    </div>
+        <div class="card p-3 mb-3 shadow-sm text-center">
+            <h4 class="text-primary"><i class="fa-solid fa-file"></i> Mã đề thi: @examId</h4>
+            <h4 class="text-success"><i class="fa-solid fa-clock"></i> Thời gian làm bài: @duration phút</h4>
+            <h4 class="text-info"><i class="fa-solid fa-user"></i> Mã sinh viên: @studentId</h4>
+        </div>
 
-    <form id="examForm" method="post" action="@Url.Action("SubmitExam", "Questions")">
-        @foreach (var question in Model)
+        <div id="timer" class="text-center text-danger p-3 rounded" style="font-size: 24px; font-weight: bold;">
+            ⏳ Thời gian còn lại: <span id="timeDisplay"></span>
+        </div>
 
-        {
-            <div class="card p-3 mb-3">
-                <h5 class="text-dark">@question.Content</h5>
+        <form id="examForm" method="post" action="@Url.Action("SubmitExam", "Questions")">
+            @foreach (var question in Model)
+            {
 
-                <!-- Hiển thị các đáp án -->
-                @foreach (var answer in question.Answers)
 
-                {
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answers[@question.QuestionId]" value="@answer.AnswerId" id="answer_@answer.AnswerId" data-correct="@answer.IsCorrect" required />
-                        <label class="form-check-label" for="answer_@answer.AnswerId">@answer.Content</label>
-                    </div>
+
+                char option = 'A';
+                <div class="card p-3 mb-3 shadow-sm">
+                    <h5 class="text-dark">Câu @STT_CH: @question.Content</h5>
+                    @foreach (var answer in question.Answers)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answers[@question.QuestionId]" value="@answer.AnswerId" id="answer_@answer.AnswerId" data-correct="@answer.IsCorrect" required />
+                            <label class="form-check-label" for="answer_@answer.AnswerId">@option.@answer.Content</label>
+                        </div>
+                        option++;
+                    }
+                </div>
+                STT_CH++;
+            }
+            <button type="submit" class="btn btn-success w-100" id="submitBtn">Nộp bài</button>
+        </form>
+
+        <h1 id="scoreDisplay" class="text-center mt-3"></h1>
+
+        <script>
+            document.getElementById("examForm").addEventListener("submit", async function (event) {
+                event.preventDefault(); // Ngăn chặn form submit mặc định
+
+                var score = 0;
+                var answers = {};
+                var totalQuestions = document.querySelectorAll('.card').length;
+                var pointPerQuestion = 10 / (totalQuestions - 1);
+                console.log("điển mỗi câu", pointPerQuestion, "tổng số câu hỏi", totalQuestions)
+                // Tính điểm
+                var MaCauTL = "";
+                var questions = document.querySelectorAll('.card');
+                for (let question of questions) {
+                    let selectedAnswer = question.querySelector('input[type="radio"]:checked');
+                    if (selectedAnswer) {
+                        let isCorrect = selectedAnswer.getAttribute('data-correct') === "True";
+                        if (isCorrect) score = score + pointPerQuestion;
+                        answers[selectedAnswer.name] = selectedAnswer.value;
+                        MaCauTL = MaCauTL + "," + selectedAnswer.value;
+                    }
                 }
-            </div>
-        }
+                console.log(MaCauTL)
+                // Gửi điểm lên server để lưu vào bảng kết quả thi
+            @* var response = await fetch('@Url.Action("SaveExamResult", "Questions")', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                    examId: @examId,
+                    studentId: @studentId,
+                    score: score
+                    })
+                    }); *@
+                     // Lấy danh sách câu trả lời của sinh viên từ giao diện (giả sử lưu dưới dạng mảng)
+                                        var answers = [];
+                document.querySelectorAll(".question").forEach(q => {
+                    var questionId = q.dataset.questionId; // Giả sử mỗi câu hỏi có data-question-id
+                    var answer = q.querySelector("input:checked")?.value || ""; // Lấy giá trị câu trả lời
+                    answers.push({ questionId: parseInt(questionId), answer: answer });
+                });
 
-        <button type="submit" class="btn btn-success w-100" id="submitBtn">Nộp bài</button>
-    </form>
+                var response = await fetch('@Url.Action("SaveExamResult", "Questions")', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        examId: @examId,
+                        studentId: @studentId,
+                        score: score,
+                        MaCauTL: MaCauTL,
+                        answers: answers // Gửi danh sách câu trả lời lên server
+                    })
+                });
+                var result = await response.json();
+                if (result.success) {
+                    if (confirm("Bạn có muốn nộp bài không ?")) {
+                        alert("Điểm của bạn là: " + score + " điểm")
+                        window.location.href = "/Exams/index";
+                    }
 
-    <!-- Hiển thị điểm -->
-    <h1 id="scoreDisplay" class="text-center mt-3"></h1>
-</div>
+                } else {
+                    alert("Có lỗi khi lưu bài thi.");
+                }
 
-<script>
-    document.getElementById("examForm").addEventListener("submit", async function (event) {
-        event.preventDefault(); // Ngăn chặn form submit mặc định
 
-        var score = 0;
-        var answers = {};
-        var totalQuestions = document.querySelectorAll('.card').length;
-        var pointPerQuestion = 10 / (totalQuestions - 1);
-        console.log("điển mỗi câu", pointPerQuestion, "tổng số câu hỏi", totalQuestions)
-        // Tính điểm
-        var questions = document.querySelectorAll('.card');
-        for (let question of questions) {
-            let selectedAnswer = question.querySelector('input[type="radio"]:checked');
-            if (selectedAnswer) {
-                let isCorrect = selectedAnswer.getAttribute('data-correct') === "True";
-                if (isCorrect) score = score + pointPerQuestion;
-                answers[selectedAnswer.name] = selectedAnswer.value;
+                var result = await response.json();
+                if (result.success) {
+                    var confirmSubmit = confirm("Bạn có chắc chắn muốn nộp bài không?");
+
+                    if (confirmSubmit) {
+                        alert("Điểm của bạn là: " + score);
+                        window.location.href = "/Exams/index";
+                    }
+                } else {
+                    alert("Có lỗi khi lưu điểm.");
+                }
+
+            });
+
+            // Đồng hồ đếm ngược
+            var duration = @duration * 60; // Chuyển phút thành giây
+            var timerElement = document.getElementById("timer");
+
+            function updateTimer() {
+                var minutes = Math.floor(duration / 60);
+                var seconds = duration % 60;
+                timerElement.innerHTML = "Thời gian còn lại: " + minutes + " phút " + seconds + " giây";
+
+                if (duration <= 0) {
+                    document.getElementById("examForm").submit();
+                } else {
+                    duration--;
+                    setTimeout(updateTimer, 1000);
+                }
             }
-        }
-        // Gửi điểm lên server để lưu vào bảng kết quả thi
-    @* var response = await fetch('@Url.Action("SaveExamResult", "Questions")', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-            examId: @examId,
-            studentId: @studentId,
-            score: score
-            })
-            }); *@
-            // Lấy danh sách câu trả lời của sinh viên từ giao diện (giả sử lưu dưới dạng mảng)
-            var answers = [];
-        document.querySelectorAll(".question").forEach(q => {
-            var questionId = q.dataset.questionId; // Giả sử mỗi câu hỏi có data-question-id
-            var answer = q.querySelector("input:checked")?.value || ""; // Lấy giá trị câu trả lời
-            answers.push({ questionId: parseInt(questionId), answer: answer });
-        });
-
-        var response = await fetch('@Url.Action("SaveExamResult", "Questions")', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                examId: @examId,
-                studentId: @studentId,
-                score: score,
-                answers: answers // Gửi danh sách câu trả lời lên server
-            })
-        });
-        var result = await response.json();
-        if (result.success) {
-            if (confirm("Bạn có muốn nộp bài không ?")) {
-                alert("Điểm của bạn là: " + score+ " điểm")
-                window.location.href = "/Exams/index";
-            }
-
-        } else {
-            alert("Có lỗi khi lưu bài thi.");
-        }
-
-
-        var result = await response.json();
-        if (result.success) {
-            var confirmSubmit = confirm("Bạn có chắc chắn muốn nộp bài không?");
-
-            if (confirmSubmit) {
-                alert("Điểm của bạn là: " + score);
-                window.location.href = "/Exams/index";
-            }
-        } else {
-            alert("Có lỗi khi lưu điểm.");
-        }
-
-    });
-
-    // Đồng hồ đếm ngược
-    var duration = @duration * 60; // Chuyển phút thành giây
-    var timerElement = document.getElementById("timer");
-
-    function updateTimer() {
-        var minutes = Math.floor(duration / 60);
-        var seconds = duration % 60;
-        timerElement.innerHTML = "Thời gian còn lại: " + minutes + " phút " + seconds + " giây";
-
-        if (duration <= 0) {
-            document.getElementById("examForm").submit();
-        } else {
-            duration--;
-            setTimeout(updateTimer, 1000);
-        }
-    }
-    updateTimer();
-</script>
-
-
+            updateTimer();
+        </script>
+    </div>
+</body>

@@ -1,0 +1,210 @@
+﻿@model IEnumerable<ExamManagement.Models.ExamResult>
+@{
+    string input = ViewBag.examResult.MaCauTL;
+    int[] numbers = input.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                         .Select(int.Parse)
+                         .ToArray();
+    int check = 0;
+    int STT_Q = 1;
+    char option = 'A';
+}
+<style>
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .exam-header {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        border-left: 5px solid #007bff;
+        animation: slideIn 0.5s ease-out;
+    }
+
+    .exam-header h5 {
+        margin: 12px 0;
+        color: #1a1a1a;
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        margin-bottom: 30px;
+        overflow: hidden;
+        animation: fadeInUp 0.5s ease-out;
+    }
+
+    .card h5 {
+        color: #2c3e50;
+        padding: 15px 20px;
+        margin: 0;
+        font-size: 1.2rem;
+        background: #f8f9fa;
+        border-bottom: 1px solid #eee;
+        font-weight: 500;
+    }
+
+    .form-check {
+        margin: 15px 20px;
+        padding: 12px 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .form-check:hover {
+        transform: translateX(5px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-check-input {
+        margin-right: 12px;
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    .form-check-label {
+        font-size: 1.1rem;
+        cursor: pointer;
+        line-height: 1.4;
+        transition: all 0.3s ease;
+    }
+
+    /* Enhanced answer states */
+    .correct-answer {
+        background: #e8f7e8;
+        border: 1px solid #28a745;
+        position: relative;
+    }
+
+    .correct-answer:before {
+        content: '✓';
+        position: absolute;
+        right: 15px;
+        color: #28a745;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .wrong-answer {
+        background: #ffe6e6;
+        border: 1px solid #dc3545;
+        position: relative;
+    }
+
+    .wrong-answer:before {
+        content: '✗';
+        position: absolute;
+        right: 15px;
+        color: #dc3545;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .neutral-answer {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+    }
+
+</style>
+<div class="container">
+    <div class="exam-header">
+        <h5>Kỳ Thi: @ViewBag.examResult.Exam.Title</h5>
+        <h5>Môn Thi: @ViewBag.examResult.Exam.Subject.SubjectName</h5>
+        <h5>Điểm: @ViewBag.examResult.Score</h5>
+    </div>
+
+    @foreach (var question in ViewBag.Questions)
+    {
+        option = 'A';
+        <div class="card p-3 mb-3">
+            <h5 class="text-dark">Câu:@STT_Q.@question.Content</h5>
+            @foreach (var answer in question.Answers)
+            {
+                check = 0;
+                if (answer.IsCorrect == true)
+                {
+                    foreach (var TL in numbers)
+                    {
+                        if (answer.AnswerId == TL)
+                        {
+                            <div class="form-check correct-answer">
+                                <input class="form-check-input" type="radio" name="answers[@question.QuestionId]"
+                                       value="@answer.AnswerId" id="answer_@answer.AnswerId"
+                                       data-correct="@answer.IsCorrect" required checked  />
+                                <label style="color:green" class="form-check-label"
+                                       for="answer_@answer.AnswerId">@option.@answer.Content</label>
+                            </div>
+                            check = 1;
+                            option++;
+                        }
+                    }
+                    if (check == 0)
+                    {
+                        <div class="form-check correct-answer">
+                            <input class="form-check-input" type="radio" name="answers[@question.QuestionId]"
+                                   value="@answer.AnswerId" id="answer_@answer.AnswerId"
+                                   data-correct="@answer.IsCorrect" required />
+                            <label style="color:green" class="form-check-label"
+                                   for="answer_@answer.AnswerId">@option.@answer.Content</label>
+                        </div>
+                        option++;
+                    }
+                }
+                else
+                {
+                    foreach (var TL in numbers)
+                    {
+                        if (answer.AnswerId == TL)
+                        {
+                            <div class="form-check wrong-answer">
+                                <input class="form-check-input" type="radio" name="answers[@question.QuestionId]"
+                                       value="@answer.AnswerId" id="answer_@answer.AnswerId"
+                                       data-correct="@answer.IsCorrect" required checked />
+                                <label style="color:red" class="form-check-label"
+                                       for="answer_@answer.AnswerId">@option.@answer.Content</label>
+                            </div>
+                            check = 3;
+                            option++;
+                        }
+                    }
+                    if (check != 3)
+                    {
+                        <div class="form-check neutral-answer">
+                            <input class="form-check-input" type="radio" name="answers[@question.QuestionId]"
+                                   value="@answer.AnswerId" id="answer_@answer.AnswerId"
+                                   data-correct="@answer.IsCorrect" required />
+                            <label style="color:black" class="form-check-label"
+                                   for="answer_@answer.AnswerId">@option.@answer.Content</label>
+                        </div>
+                        option++;
+                    }
+                    
+                }
+               
+            }
+           
+        </div>
+        STT_Q++;
+    }
+</div>
+<script>
+    document.querySelectorAll('.form-check-input').forEach(input => {
+        input.addEventListener('click', function (event) {
+            event.preventDefault(); // Ngăn click
+        });
+    });
+</script>

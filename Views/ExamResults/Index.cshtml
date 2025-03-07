@@ -5,41 +5,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     int currentPage = ViewBag.Page;
     int totalPages = ViewBag.TotalPages;
+    int STT = 1;
 }
 
-<div class="container mt-4">
-    <h2 class="text-primary text-center">Danh Sách Kết Quả</h2>
-    <table class="table table-striped table-bordered mt-3">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">Tên Sinh Viên</th>
-                <th scope="col">Kỳ Thi</th>
-                <th scope="col">Môn Học</th>
-                <th scope="col">Điểm</th>
-                <th scope="col">Ngày Nộp</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+<div class="container mt-5">
+    <h2 class="text-primary text-center mb-4">Danh Sách Kết Quả</h2>
+
+    <!-- Bảng -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover shadow-sm">
+            <thead class="table-dark">
                 <tr>
-                    <td>@item.Student.FullName</td>
-                    <td>@item.Exam.Title</td>
-                    <td>@item.Exam.Subject.SubjectName</td>
-                    <td>@item.Score</td>
-                    <td>@item.SubmittedAt</td>
+                    <th class="text-center">STT</th>
+                    <th scope="col">Tên Sinh Viên</th>
+                    <th scope="col">Kỳ Thi</th>
+                    <th scope="col">Môn Học</th>
+                    <th scope="col">Điểm</th>
+                    <th scope="col">Ngày Nộp</th>
+                    <th scope="col">Hành Động</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">@STT</td>
+                        <td>@item.Student.FullName</td>
+                        <td>@item.Exam.Title</td>
+                        <td>@item.Exam.Subject.SubjectName</td>
+                        <td>@item.Score</td>
+                        <td>@item.SubmittedAt</td>
+                        <td>
+                            <a class="btn btn-outline-primary btn-sm" asp-area="" asp-controller="ExamResults" asp-action="ExamResults" asp-route-Id="@item.ResultId" asp-route-SubId="@item.Exam.SubjectId">Xem Lại</a>
+                        </td>
+                    </tr>
+                    STT++;
+                }
+            </tbody>
+        </table>
+    </div>
 
     <!-- Phân trang -->
-    <nav>
+    <nav aria-label="Page navigation" class="mt-4">
         <ul class="pagination justify-content-center">
             @if (currentPage > 1)
             {
                 <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })">Trước</a>
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; Trước</span>
+                    </a>
                 </li>
             }
 
@@ -53,9 +67,14 @@
             @if (currentPage < totalPages)
             {
                 <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })">Sau</a>
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })" aria-label="Next">
+                        <span aria-hidden="true">Sau &raquo;</span>
+                    </a>
                 </li>
             }
         </ul>
     </nav>
 </div>
+
+<!-- Bootstrap JS (nếu cần cho các tính năng động) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

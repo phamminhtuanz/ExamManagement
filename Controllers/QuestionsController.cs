@@ -24,26 +24,36 @@ namespace ExamManagement.Controllers
             HttpContext.Session.SetInt32("ExamSubjectId", examId);
             var customerId = HttpContext.Session.GetInt32("CustomerId");
 
-            // Check if CustomerId exists in session
+            // Kiểm tra nếu chưa đăng nhập
             if (customerId == null)
             {
                 TempData["Error"] = "Bạn cần đăng nhập để sử dụng chức năng này.";
                 return RedirectToAction("Index", "LoginC");
             }
 
-            // Get questions based on subject (eId) and include answers
+            // Lấy danh sách câu hỏi dựa trên môn học (eId) và bao gồm cả đáp án
             var questions = _context.Questions
                 .Where(q => q.SubjectId == eId)
                 .Include(q => q.Answers)
                 .ToList();
 
-            // Pass the duration for exam timing
-            ViewBag.Duration = sId; // sId is the exam duration
+            // Random thứ tự câu hỏi
+            questions = questions.OrderBy(q => Guid.NewGuid()).ToList();
+
+            // Random thứ tự đáp án trong mỗi câu hỏi
+            foreach (var question in questions)
+            {
+                question.Answers = question.Answers.OrderBy(a => Guid.NewGuid()).ToList();
+            }
+
+            // Truyền thời gian làm bài và các thông tin khác
+            ViewBag.Duration = sId;          // sId là thời gian thi
             ViewBag.ExamId = examId;
-            ViewBag.StudentId = customerId;// sId is the exam duration
+            ViewBag.StudentId = customerId;
 
             return View(questions);
         }
+
 
         /*[HttpPost]
         public async Task<IActionResult> SaveExamResult([FromBody] ExamResult examResult)
@@ -86,6 +96,7 @@ namespace ExamManagement.Controllers
                 StudentId = studentId,
                 ExamId = examId,
                 Score = examSubmission.Score,
+                MaCauTL=examSubmission.MaCauTL,
                 SubmittedAt = DateTime.Now
             };
 

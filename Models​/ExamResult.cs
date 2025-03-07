@@ -17,7 +17,7 @@ public partial class ExamResult
 
     [Display(Name = "Điểm Số")]
     public decimal? Score { get; set; }
-
+    public string? MaCauTL {  get; set; }
     [Display(Name = "Ngày Nộp Bài")]
     public DateTime? SubmittedAt { get; set; }
 

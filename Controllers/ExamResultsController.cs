@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ExamManagement.Models;
+using System.Net.WebSockets;
+using System.Security.Cryptography;
 
 namespace ExamManagement.Controllers
 {
@@ -38,7 +40,23 @@ namespace ExamManagement.Controllers
 
             return View(examResults);
         }
-
+        public async Task<IActionResult> ExamResults(int Id,int SubId)
+        {
+            var questions = _context.Questions
+                 .Where(q => q.SubjectId == SubId)
+                 .Include(q => q.Answers)
+                 .ToList();
+            ViewBag.Questions = questions;
+            int StudentId = HttpContext.Session.GetInt32("CustomerId") ?? 0;
+            var examResult = await _context.ExamResults
+                  .Include(e => e.Exam)
+                  .Include(e => e.Student)
+                  .Include(e => e.Exam)
+                  .ThenInclude(e => e.Subject)
+                  .FirstOrDefaultAsync(m => m.ResultId == Id);
+            ViewBag.examResult = examResult;
+            return View();
+        }
 
         // GET: ExamResults/Details/5
         public async Task<IActionResult> Details(int? id)

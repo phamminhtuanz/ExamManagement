@@ -2,6 +2,7 @@
 {
     public decimal? Score { get; set; }
     public List<StudentAnswerModel> Answers { get; set; } = new();
+    public string MaCauTL { get; set; }
 }
 
 public class StudentAnswerModel

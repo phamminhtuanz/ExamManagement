@@ -20,8 +20,9 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
         }
 
         // GET: AdminManagement/Answers
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, int page = 1)
         {
+            int pageSize = 10; // Số bản ghi trên mỗi trang
             var examManagementContext = _context.Answers
                 .Include(a => a.Question)
                 .Include(a => a.Question.Subject)
@@ -31,13 +32,29 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 examManagementContext = examManagementContext.Where(a =>
-                    a.Content.Contains(searchString) || // Lọc theo nội dung của câu trả lời
-                    a.Question.Content.Contains(searchString) || // Lọc theo nội dung câu hỏi
-                    a.Question.Subject.SubjectName.Contains(searchString)); // Lọc theo tên môn học
+                    a.Content.Contains(searchString) ||
+                    a.Question.Content.Contains(searchString) ||
+                    a.Question.Subject.SubjectName.Contains(searchString));
             }
 
-            return View(await examManagementContext.ToListAsync());
+            // Tổng số bản ghi sau khi lọc (nếu có)
+            int totalRecords = await examManagementContext.CountAsync();
+
+            // Lấy dữ liệu cho trang hiện tại
+            var paginatedAnswers = await examManagementContext
+                .OrderBy(a => a.AnswerId)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            // Gửi dữ liệu phân trang qua ViewBag
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+            ViewBag.SearchString = searchString;
+
+            return View(paginatedAnswers);
         }
+
 
 
         // GET: AdminManagement/Answers/Details/5
@@ -136,38 +153,27 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
             return View(answer);
         }
 
-        // GET: AdminManagement/Answers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var answer = await _context.Answers
-                .Include(a => a.Question)
-                .FirstOrDefaultAsync(m => m.AnswerId == id);
-            if (answer == null)
-            {
-                return NotFound();
-            }
-
-            return View(answer);
-        }
-
-        // POST: AdminManagement/Answers/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var answer = await _context.Answers.FindAsync(id);
-            if (answer != null)
+            if (answer == null)
             {
-                _context.Answers.Remove(answer);
+                return Json(new { success = false, message = "Không tìm thấy câu trả lời!" });
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _context.Answers.Remove(answer);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                // Gửi lỗi chi tiết về cho Ajax để xem cụ thể
+                return Json(new { success = false, message = "Lỗi chi tiết: " + ex.Message });
+            }
         }
 
         private bool AnswerExists(int id)
