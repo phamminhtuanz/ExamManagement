@@ -34,8 +34,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\Answers\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T18:42:40.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T18:42:40.612Z"
             },
             {
               "$type": "Document",
@@ -47,8 +46,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
               "ViewState": "AgIAAJsAAAAAAAAAAAAYwLEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T18:34:28.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T18:34:28.194Z"
             },
             {
               "$type": "Document",
@@ -56,9 +54,9 @@
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
-              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Answers\\Index.cshtml*",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml*",
-              "ViewState": "AgIAALEAAAAAAAAAAAAAAM0AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
+              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAMMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-07T18:32:34.77Z",
               "EditorCaption": ""
