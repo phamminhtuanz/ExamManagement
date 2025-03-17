@@ -172,7 +172,7 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
 
             return View(question);
         }
-
+        
         // POST: AdminManagement/Questions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

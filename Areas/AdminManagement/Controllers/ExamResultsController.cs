@@ -153,6 +153,46 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
 
             return View(examResult);
         }
+        [HttpPost]
+        public JsonResult DeleteDS([FromBody] List<string> selectedValues)
+        {
+            if (selectedValues == null || !selectedValues.Any())
+            {
+                return Json(new { success = false, message = "Không có dữ liệu để xóa" });
+            }
+
+            try
+            {
+                Console.WriteLine("Dữ liệu nhận từ client: " + string.Join(", ", selectedValues));
+
+                // Chuyển đổi List<string> thành List<int>
+                List<int> selectedIds = selectedValues.Select(int.Parse).ToList();
+                Console.WriteLine("Danh sách ID sau khi chuyển đổi: " + string.Join(", ", selectedIds));
+
+                // Lấy danh sách dữ liệu cần xóa
+                var examResults = _context.ExamResults.Where(e => selectedIds.Contains(e.ResultId)).ToList();
+
+                if (examResults.Any())
+                {
+                    _context.ExamResults.RemoveRange(examResults);
+                    int affectedRows = _context.SaveChanges();
+
+                    return Json(new { success = true, message = $"Đã xóa {affectedRows} kết quả!" });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Không tìm thấy bản ghi nào để xóa" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Lỗi khi xóa: " + ex.Message });
+            }
+
+        }
+
+
+
 
         // POST: AdminManagement/ExamResults/Delete/5
         [HttpPost, ActionName("Delete")]

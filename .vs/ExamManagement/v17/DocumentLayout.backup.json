@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\DATN\\ExamManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\controllers\\examresultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\examresultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\answers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\answers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\views\\examresults\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\views\\examresults\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\exams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\exams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\models\u200B\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:models\u200B\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\views\\admins\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\views\\admins\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\models\u200B\\examresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:models\u200B\\examresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,52 +33,85 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 202,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Exams\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Exams\\Index.cshtml",
-              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Exams\\Index.cshtml",
-              "RelativeToolTip": "Views\\Exams\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T06:48:00.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T06:37:22.923Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedHeight": 38,
+          "DockedHeight": 143,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "ExamResultsController.cs",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\ExamResultsController.cs",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\ExamResultsController.cs",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\ExamResultsController.cs*",
+              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\ExamResultsController.cs*",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAwwL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T09:15:39.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\Question.cs",
+              "RelativeDocumentMoniker": "Models\u200B\\Question.cs",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Models\u200B\\Question.cs",
+              "RelativeToolTip": "Models\u200B\\Question.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T09:12:06.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Answers\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Answers\\Index.cshtml",
-              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Answers\\Index.cshtml",
-              "RelativeToolTip": "Views\\Answers\\Index.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Questions\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Questions\\Index.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Questions\\Index.cshtml",
+              "RelativeToolTip": "Views\\Questions\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T08:16:17.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
+              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T06:53:39.847Z",
+              "WhenOpened": "2025-03-17T08:15:59.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExamResult.cs",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\ExamResult.cs",
+              "RelativeDocumentMoniker": "Models\u200B\\ExamResult.cs",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Models\u200B\\ExamResult.cs",
+              "RelativeToolTip": "Models\u200B\\ExamResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T08:12:35.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "RelativeToolTip": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "ViewState": "AgIAAIMAAAAAAAAAAADwv6EAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T08:10:31.842Z",
               "EditorCaption": ""
             },
             {
