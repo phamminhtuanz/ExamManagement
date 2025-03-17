@@ -191,9 +191,6 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
 
         }
 
-
-
-
         // POST: AdminManagement/ExamResults/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

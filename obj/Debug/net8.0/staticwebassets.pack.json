@@ -301,6 +301,18 @@
       "PackagePath": "staticwebassets\\images\\Nen.jpg"
     },
     {
+      "Id": "C:\\DATN\\ExamManagement\\wwwroot\\images\\abc.jpg",
+      "PackagePath": "staticwebassets\\images\\abc.jpg"
+    },
+    {
+      "Id": "C:\\DATN\\ExamManagement\\wwwroot\\images\\abc.png",
+      "PackagePath": "staticwebassets\\images\\abc.png"
+    },
+    {
+      "Id": "C:\\DATN\\ExamManagement\\wwwroot\\images\\anhbia.jpg",
+      "PackagePath": "staticwebassets\\images\\anhbia.jpg"
+    },
+    {
       "Id": "C:\\DATN\\ExamManagement\\wwwroot\\images\\banner.jpg",
       "PackagePath": "staticwebassets\\images\\banner.jpg"
     },

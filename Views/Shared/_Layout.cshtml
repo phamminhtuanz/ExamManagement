@@ -179,10 +179,40 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <!-- Cột thông tin về chúng tôi -->
+                    <div class="col-md-4 mb-4">
+                        <h5>Về Chúng Tôi</h5>
+                        <p>Nền tảng thi trắc nghiệm online tốt nhất.</p>
+                    </div>
+                    <!-- Cột liên kết nhanh -->
+                    <div class="col-md-4 mb-4">
+                        <h5>Liên Kết Nhanh</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Trang Chủ</a></li>
+                            <li><a href="#">Đề thi</a></li>
+                            <li><a href="#">Xem lại bài</a></li>
+                        </ul>
+                    </div>
+                    <!-- Cột mạng xã hội -->
+                    <div class="col-md-4 mb-4">
+                        <h5>Theo Dõi Chúng Tôi</h5>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\DATN\\ExamManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\controllers\\examresultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\examresultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\views\\examresults\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,24 +58,106 @@
       "DocumentGroups": [
         {
           "DockedHeight": 143,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:52:05.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:51:59.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:51:58.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:51:57.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:51:55.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAswNQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:42:14.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ExamResultsController.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\ExamResultsController.cs",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\ExamResultsController.cs",
-              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\ExamResultsController.cs*",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\ExamResultsController.cs*",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAwwL4AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\ExamResultsController.cs",
+              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\ExamResultsController.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAADwv8AAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T09:15:39.671Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\Question.cs",
               "RelativeDocumentMoniker": "Models\u200B\\Question.cs",
@@ -59,12 +165,11 @@
               "RelativeToolTip": "Models\u200B\\Question.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:12:06.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T09:12:06.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Questions\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Questions\\Index.cshtml",
@@ -72,12 +177,11 @@
               "RelativeToolTip": "Views\\Questions\\Index.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAADgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T08:16:17.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T08:16:17.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
@@ -85,12 +189,11 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\Admins\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T08:15:59.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T08:15:59.048Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "ExamResult.cs",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\ExamResult.cs",
               "RelativeDocumentMoniker": "Models\u200B\\ExamResult.cs",
@@ -98,12 +201,11 @@
               "RelativeToolTip": "Models\u200B\\ExamResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:12:35.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T08:12:35.03Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
@@ -111,12 +213,7 @@
               "RelativeToolTip": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
               "ViewState": "AgIAAIMAAAAAAAAAAADwv6EAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T08:10:31.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-03-17T08:10:31.842Z"
             }
           ]
         }

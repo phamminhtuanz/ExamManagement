@@ -2,129 +2,79 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
+	.image_2 {
+		background-image: url('@Url.Content("~/images/abc.png")');
+		background-size: 80%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 
-    /* Banner */
-    .banner {
-        background-color: #404080;
-        color: white;
-        text-align: center;
-        padding: 40px 20px;
-    }
+	.image_1 {
+		background-image: url('	https://eduquiz.vn/_next/static/media/BG.624f414d.svg');
+		background-size: cover;
+		background-position: center;
+		min-height: 85vh;
+	}
 
-    /* Container */
-    .container {
-        background: white;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+	.hero-section {
+		display: flex;
+		flex-direction: column;
+		padding-top: 150px !important;
+		align-items: flex-start;
+		text-align: start;
+		color: black;
+		padding: 20px;
+	}
 
-    /* Tiêu đề chính */
-    h1, h2, h4 {
-        color: #ff9000;
-    }
+	.badge-custom {
+		border: 2px solid white;
+		border-radius: 9999px;
+		padding: 8px 20px;
+		font-size: 14px;
+		background: rgba(0, 0, 0, 0.5);
+	}
 
-    /* Tính năng */
-    .feature {
-        background: #ffffff;
-        padding: 15px;
-        border-left: 5px solid #ff9000;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
+	.highlight {
+		color: #ffcc00;
+		font-weight: bold;
+	}
 
-    /* Danh sách */
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+	.btn-primary {
+		background: #6a11cb;
+		border: none;
+	}
 
-        ul li {
-            padding: 8px 0;
-            font-weight: bold;
-            color: #404080;
-        }
-
-    /* Footer */
-    footer {
-        background-color: #404080;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        margin-top: 20px;
-    }
-
-    /* Nút */
-    .btn-custom {
-        background-color: #ff9000;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-
-        .btn-custom:hover {
-            background-color: #e07b00;
-            color: white;
-        }
-
+	.btn-info {
+		background: #2575fc;
+		border: none;
+	}
 </style>
 
-    <div class="banner">
-        <h1>Quiz Đại Học - Thử Thách Kiến Thức</h1>
-        <p>Nơi tri thức được tôn vinh!</p>
-    </div>
+<body>
+	<div class="row image_1">
+		<div class="col-md-4" style="margin-left:100px;">
+			<section class="hero-section container-fluid">
+				<div class="badge-custom mb-3" style="color:white">#1 Nền tảng thi trắc nghiệm online tốt nhất</div>
+				<h2 class="mt-2">Có một cách đơn giản hơn để <span class="highlight">tạo</span> trắc nghiệm online</h2>
+				<p class="hero-description mt-3">
+					Tạo câu hỏi và đề thi nhanh với những giải pháp thông minh. EduQuiz tận dụng sức mạnh công nghệ để nâng cao trình độ học tập của bạn.
+				</p>
 
-    <div class="container my-4">
-    <img src="../images/banner.jpg" alt="Alternate Text" width="100%" height="500px"/>
-        <h2>Chào mừng bạn đến với Quiz Đại Học!</h2>
-        <p>Hãy cùng khám phá kho tàng kiến thức với các bài trắc nghiệm phong phú.</p>
+				<div class="rating d-flex align-items-center mt-3">
+					<img src="users.png" alt="Users" class="me-2" style="height: 40px;">
+					<span class="fs-5">Hơn 200.000+ khách hàng đã yêu thích sử dụng</span>
+				</div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="feature">
-                    <h4>Kho tàng kiến thức đồ sộ</h4>
-                    <p>Hàng ngàn câu hỏi trắc nghiệm bao quát nhiều lĩnh vực.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="feature">
-                    <h4>Học tập linh hoạt</h4>
-                    <p>Trải nghiệm học tập mọi lúc, mọi nơi trên nhiều thiết bị.</p>
-                </div>
-            </div>
-        </div>
+				<div class="d-flex mt-4 gap-3">
+					<button class="btn btn-primary px-4 py-2">Tạo đề thi ngay</button>
+					<button class="btn btn-info px-4 py-2">Tìm kiếm đề thi</button>
+				</div>
+			</section>
+		</div>
+		<div class="col-md-7 image_2">
+		</div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="feature">
-                    <h4>Đánh giá năng lực</h4>
-                    <p>Xác định điểm mạnh và điểm yếu để cải thiện bản thân.</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="feature">
-                    <h4>Chuẩn bị cho kỳ thi</h4>
-                    <p>Làm quen cấu trúc đề thi, rèn luyện kỹ năng giải bài tập.</p>
-                </div>
-            </div>
-        </div>
+	</div>
 
-        <h2>Tại sao chọn Quiz Đại Học?</h2>
-        <ul>
-            <li>Tiện lợi và dễ sử dụng</li>
-            <li>Nội dung chất lượng</li>
-            <li>Cập nhật liên tục</li>
-            <li>Hoàn toàn miễn phí</li>
-        </ul>
-        
-        <h2>Liên hệ</h2>
-        <p>Email: <a href="mailto:contact@quizdaihoc.com">contact@quizdaihoc.com</a></p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Quiz Đại Học. Mọi quyền được bảo lưu.</p>
-    </footer>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
