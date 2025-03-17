@@ -1,164 +1,176 @@
-﻿@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["Success"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
-
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        @TempData["Error"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - QUIZZZ</title> @* Vietnamese title *@
+    <title>@ViewData["Title"] - QUIZZZ</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BakeryManagement.styles.css" asp-append-version="true" />
     <style>
-        /* General styles */
         body {
-            font-family: sans-serif; /* Use a standard font */
-            background-color: #ffffff; /* White background */
-            color: #404080; /* Dark blue/purple text color */
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            color: #404080;
         }
 
         .navbar {
             background-color: #404080;
-        }
-        /* Navbar styles */
-        .navbar {
-            border-bottom: 2px solid #404080; /* Dark blue/purple border */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand {
-            color: #f04236 !important; /* Orange/Red logo color */
-            font-size: 30px;
-            font-weight: bold;
+            color: #f04236 !important;
+            font-size: 2rem;
+            font-weight: 700;
+            transition: color 0.3s ease;
         }
 
-            .navbar-brand img {
-                height: 80px;
-                margin-right: 10px;
+            .navbar-brand:hover {
+                color: #ff9000 !important;
             }
 
+            .navbar-brand img {
+                height: 60px;
+                margin-right: 15px;
+                transition: transform 0.3s ease;
+            }
+
+                .navbar-brand img:hover {
+                    transform: scale(1.1);
+                }
+
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(64, 64, 128, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Dark blue/purple toggler icon */
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-
         .nav-link {
-            color: #404080 !important; /* Dark blue/purple link color */
+            color: #ffffff !important;
+            font-size: 1.25rem;
+            font-weight: 500;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
             .nav-link:hover {
-                color: #ff9000 !important; /* Orange hover color */
+                color: #ff9000 !important;
+                background-color: rgba(255, 255, 255, 0.1);
             }
 
-        /* Alert styles */
         .alert-success {
-            background-color: #d4edda; /* Light green */
+            background-color: #d4edda;
             border-color: #c3e6cb;
-            color: #155724; /* Dark green text */
+            color: #155724;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .alert-danger {
-            background-color: #f8d7da; /* Light red */
+            background-color: #f8d7da;
             border-color: #f5c6cb;
-            color: #721c24; /* Dark red text */
+            color: #721c24;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Other styles as needed */
         .btn-primary {
-            background-color: #ff9000; /* Orange primary button */
+            background-color: #ff9000;
             border-color: #ff9000;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
         }
 
             .btn-primary:hover {
-                background-color: darken(#ff9000, 10%);
-                border-color: darken(#ff9000, 10%);
+                background-color: #e68100;
+                border-color: #e68100;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             }
 
         .btn-secondary {
-            background-color: #404080; /* Dark blue/purple secondary button */
+            background-color: #404080;
             border-color: #404080;
             color: #ffffff;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
         }
 
             .btn-secondary:hover {
-                background-color: darken(#404080, 10%);
-                border-color: darken(#404080, 10%);
+                background-color: #323466;
+                border-color: #323466;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             }
 
-        .nav-link {
-            font-weight: bold; /* Make the text bold */
-            border-radius: 20px; /* Rounded corners */
-            padding: 0.5rem 1rem; /* Adjust padding as needed */
-            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
-            font-size:1.5rem;
-
-                color: white !important; /* White text on hover */
-            }
-
-        .rounded { /* Apply rounded corners to the buttons */
-            border-radius: 20px; /* Adjust the radius for desired roundness */
+        .container {
+            max-width: 1200px;
+            margin-top: 2rem;
         }
 
-        .fw-bold { /* Make the text bold */
-            font-weight: bold !important;
+        main {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-
-        /* Example of a rounded font.  You'll need to import the font. */
-        /* There are many free rounded fonts available online. */
-        /* You can also use Google Fonts. */
-        /*
-            .nav-link {
-                font-family: 'YourRoundedFontName', sans-serif;
-            }
     </style>
 </head>
 <body>
+    @if (TempData["Success"] != null)
+
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/logo.png" alt="Bakery Logo">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" alt="Bakery Logo"> QUIZZZ
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Exams" asp-action="Index">Đề thi</a> @* Vietnamese *@
+                            <a class="nav-link" asp-area="" asp-controller="Exams" asp-action="Index">Đề thi</a>
                         </li>
-
                         @if (Context.Session.GetString("CustomerLogin") != null)
+
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="ExamResults" asp-action="Index" asp-route-studentId="@Context.Session.GetInt32("CustomerId")">Kết quả thi</a> @* Vietnamese *@
+                                <a class="nav-link" asp-area="" asp-controller="ExamResults" asp-action="Index" asp-route-studentId="@Context.Session.GetInt32("CustomerId")">Kết quả thi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Students" asp-action="Details" asp-route-studentId="@Context.Session.GetInt32("CustomerId")">Thông tin cá nhân</a> @* Vietnamese *@
+                                <a class="nav-link" asp-controller="Students" asp-action="Details" asp-route-studentId="@Context.Session.GetInt32("CustomerId")">Thông tin cá nhân</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Logout", "LoginC")">Đăng xuất</a> @* Vietnamese *@
+                                <a class="nav-link" href="@Url.Action("Logout", "LoginC")">Đăng xuất</a>
                             </li>
                         }
+
                         else
+
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="LoginC" asp-action="Index">Đăng nhập</a> @* Vietnamese *@
+                                <a class="nav-link" asp-controller="LoginC" asp-action="Index">Đăng nhập</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Create">Đăng ký</a> @* Vietnamese *@
+                                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Create">Đăng ký</a>
                             </li>
                         }
                     </ul>
@@ -166,6 +178,7 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
