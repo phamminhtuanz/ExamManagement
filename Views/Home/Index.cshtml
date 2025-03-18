@@ -1,6 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+
 <style>
 	.image_2 {
 		background-image: url('@Url.Content("~/images/abc.png")');
@@ -48,26 +51,147 @@
 		background: #2575fc;
 		border: none;
 	}
-</style>
 
+	/* Container */
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 40px 20px;
+	}
+
+	/* Title */
+	.title {
+		text-align: center;
+		font-size: 32px;
+		font-weight: 700;
+		color: #865DFF;
+		margin-bottom: 40px;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		position: relative;
+	}
+
+		.title::after {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60px;
+			height: 4px;
+			background: linear-gradient(90deg, #865DFF, #6a11cb);
+			border-radius: 2px;
+		}
+
+	/* Slider Wrapper */
+	.slider-wrapper {
+		width: 100%;
+		max-width: 1100px;
+		overflow: hidden;
+		position: relative;
+		margin: 0 auto 60px;
+		padding: 20px 0;
+	}
+
+	.slider {
+		display: flex;
+		gap: 20px;
+		width: max-content;
+		transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1); /* Chuyển động mượt */
+	}
+
+		.slider img {
+			height: 100px;
+			max-width: 120px;
+			object-fit: contain;
+			flex-shrink: 0;
+		}
+	/* Features */
+	.features {
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		flex-wrap: wrap;
+	}
+
+	.feature-box {
+		width: 300px;
+		padding: 30px;
+		border-radius: 15px;
+		text-align: center;
+		background: #fff;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+		.feature-box:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		.feature-box i {
+			font-size: 40px;
+			color: #865DFF;
+			margin-bottom: 15px;
+			transition: color 0.3s ease;
+		}
+
+		.feature-box:hover i {
+			color: #6a11cb;
+		}
+
+	.feature-title {
+		font-size: 20px;
+		font-weight: 600;
+		color: #333;
+		margin-bottom: 10px;
+	}
+
+	.feature-desc {
+		font-size: 15px;
+		color: #666;
+		line-height: 1.5;
+		margin-bottom: 15px;
+	}
+
+	.feature-box a {
+		text-decoration: none;
+		color: #865DFF;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 8px 20px;
+		border: 2px solid #865DFF;
+		border-radius: 25px;
+		transition: all 0.3s ease;
+	}
+
+		.feature-box a:hover {
+			background: #865DFF;
+			color: #fff;
+			border-color: #6a11cb;
+		}
+</style>
 <body>
 	<div class="row image_1">
 		<div class="col-md-4" style="margin-left:100px;">
 			<section class="hero-section container-fluid">
 				<div class="badge-custom mb-3" style="color:white">#1 Nền tảng thi trắc nghiệm online tốt nhất</div>
-				<h2 class="mt-2">Có một cách đơn giản hơn để <span class="highlight">tạo</span> trắc nghiệm online</h2>
+				<h2 class="mt-2">Có một cách đơn giản hơn để thi trắc nghiệm online</h2>
 				<p class="hero-description mt-3">
 					Tạo câu hỏi và đề thi nhanh với những giải pháp thông minh. EduQuiz tận dụng sức mạnh công nghệ để nâng cao trình độ học tập của bạn.
 				</p>
 
 				<div class="rating d-flex align-items-center mt-3">
-					<img src="users.png" alt="Users" class="me-2" style="height: 40px;">
-					<span class="fs-5">Hơn 200.000+ khách hàng đã yêu thích sử dụng</span>
+					<img src="./images/user.jpg" alt="Users" class="me-2" style="height: 40px; border-radius: 50%;">
+                    <span class="fs-5">khách hàng đã yêu thích sử dụng</span>
+					
 				</div>
-
+				<div>
+                    <span class="me-2 d-block" style="color: gold; font-size: 18px;">★★★★★</span>
+                </div>
 				<div class="d-flex mt-4 gap-3">
-					<button class="btn btn-primary px-4 py-2">Tạo đề thi ngay</button>
-					<button class="btn btn-info px-4 py-2">Tìm kiếm đề thi</button>
+					@* <button class="btn btn-primary px-4 py-2">Tạo đề thi ngay</button> *@
+					<button class="btn btn-info px-4 py-2" onclick="location.href='@Url.Action("Index", "Exams")'" style="border-radius:9999px">Tìm kiếm đề thi</button>
 				</div>
 			</section>
 		</div>
@@ -75,6 +199,89 @@
 		</div>
 
 	</div>
+	<div class="container">
+		<div class="title">
+			Được cộng đồng sinh viên, trường đại học và doanh nghiệp trên cả nước tin cậy
+		</div>
 
+		<div class="slider-wrapper">
+			<div class="slider">
+				<img src="~/images/1.png" />
+				<img src="~/images/2.png" />
+				<img src="~/images/3.png" />
+				<img src="~/images/4.png" />
+				<img src="~/images/5.png" />
+				<img src="~/images/6.png" />
+				<img src="~/images/7.png" />
+				<img src="~/images/8.png" />
+				<img src="~/images/9.png" />
+				<img src="~/images/10.jpg" />
+				<!-- Nhân đôi để tạo vòng lặp -->
+				<img src="~/images/1.png" />
+				<img src="~/images/2.png" />
+				<img src="~/images/3.png" />
+				<img src="~/images/4.png" />
+				<img src="~/images/5.png" />
+				<img src="~/images/6.png" />
+				<img src="~/images/7.png" />
+				<img src="~/images/8.png" />
+				<img src="~/images/9.png" />
+				<img src="~/images/10.jpg" />
+			</div>
+		</div>
+
+		<div class="features">
+			<div class="feature-box">
+				<i class="fas fa-user-graduate"></i>
+				<div class="feature-title">Sinh viên</div>
+				<div class="feature-desc">Nền tảng trao đổi đề thi, tài liệu học tập. Sinh viên có thể tự học và chia sẻ cho nhóm học tập.</div>
+				<a href="#">Bắt đầu</a>
+			</div>
+			<div class="feature-box">
+				<i class="fas fa-chalkboard-teacher"></i>
+				<div class="feature-title">Giảng viên</div>
+				<div class="feature-desc">Hỗ trợ tạo đề dễ dàng, chính xác, giúp giảng viên quản lý bài giảng và đánh giá hiệu quả.</div>
+				<a href="#">Bắt đầu</a>
+			</div>
+			<div class="feature-box">
+				<i class="fas fa-school"></i>
+				<div class="feature-title">Trung tâm đào tạo</div>
+				<div class="feature-desc">Nền tảng hỗ trợ đào tạo cho doanh nghiệp và tổ chức, giúp sắp xếp nội dung hiệu quả.</div>
+				<a href="#">Bắt đầu</a>
+			</div>
+		</div>
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+
 </body>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		let slider = document.querySelector(".slider");
+		let imgWidth = slider.children[0].offsetWidth + 20; // Kích thước ảnh + khoảng cách
+		let index = 0;
+
+		function slideNext() {
+			index++;
+			slider.style.transition = "transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)";
+			slider.style.transform = `translateX(-${index * imgWidth}px)`;
+
+			setTimeout(() => {
+				if (index >= slider.children.length / 2) {
+					slider.style.transition = "none";
+					index = 0;
+					slider.style.transform = `translateX(0)`;
+				}
+			}, 1000);
+		}
+
+		setInterval(slideNext, 3000);
+	});
+</script>
+
+
+
+
+

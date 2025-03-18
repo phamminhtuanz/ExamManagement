@@ -7,11 +7,20 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BakeryManagement.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
             background-color: #f8f9fa;
             color: #404080;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         .navbar {
@@ -106,18 +115,38 @@
         .container {
             max-width: 1200px;
             margin-top: 2rem;
+            flex: 1;
         }
 
         main {
             background-color: #ffffff;
             border-radius: 15px;
-            padding: 2rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
+
+        footer {
+            background-color: #404080;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+            footer a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
     </style>
 </head>
 <body>
     @if (TempData["Success"] != null)
+
+
 
     {
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -127,6 +156,8 @@
     }
 
     @if (TempData["Error"] != null)
+
+
 
     {
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -151,6 +182,8 @@
                         </li>
                         @if (Context.Session.GetString("CustomerLogin") != null)
 
+
+
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="ExamResults" asp-action="Index" asp-route-studentId="@Context.Session.GetInt32("CustomerId")">Kết quả thi</a>
@@ -163,7 +196,11 @@
                             </li>
                         }
 
+
+
                         else
+
+
 
                         {
                             <li class="nav-item">
@@ -183,41 +220,46 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <!-- Cột thông tin về chúng tôi -->
-                    <div class="col-md-4 mb-4">
-                        <h5>Về Chúng Tôi</h5>
-                        <p>Nền tảng thi trắc nghiệm online tốt nhất.</p>
-                    </div>
-                    <!-- Cột liên kết nhanh -->
-                    <div class="col-md-4 mb-4">
-                        <h5>Liên Kết Nhanh</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Trang Chủ</a></li>
-                            <li><a href="#">Đề thi</a></li>
-                            <li><a href="#">Xem lại bài</a></li>
-                        </ul>
-                    </div>
-                    <!-- Cột mạng xã hội -->
-                    <div class="col-md-4 mb-4">
-                        <h5>Theo Dõi Chúng Tôi</h5>
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
+<footer>
+    <div class="container">
+        <div class="row">
+            <!-- Cột thông tin về chúng tôi -->
+            <div class="col-md-4 mb-4">
+                <h5>Về Chúng Tôi</h5>
+                <p>Nền tảng thi trắc nghiệm online tốt nhất.</p>
+            </div>
+            <!-- Cột liên kết nhanh -->
+            <div class="col-md-4 mb-4">
+                <h5>Liên Kết Nhanh</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#">Đề thi</a></li>
+                    <li><a href="#">Xem lại bài</a></li>
+                </ul>
+            </div>
+            <!-- Cột mạng xã hội -->
+            <div class="col-md-4 mb-4">
+                <h5>Theo Dõi Chúng Tôi</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
