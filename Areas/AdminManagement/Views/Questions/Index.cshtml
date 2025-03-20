@@ -119,3 +119,62 @@
         background-color: #f5f5f5;
     }
 </style>
+<!-- Thanh phân trang -->
+@if (ViewBag.TotalPages > 1)
+
+{
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            @* Nút "Trang đầu" *@
+            @if (ViewBag.CurrentPage > 1)
+
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = 1, searchString = ViewBag.SearchString })">«</a>
+                </li>
+            }
+
+            @* Nút "..." trước *@
+            @if (ViewBag.CurrentPage > 3)
+
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = 1, searchString = ViewBag.SearchString })">1</a>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+            }
+
+            @* Hiển thị 3 trang xung quanh trang hiện tại *@
+            @for (int i = Math.Max(1, ViewBag.CurrentPage - 1); i <= Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 1); i++)
+
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i, searchString = ViewBag.SearchString })">@i</a>
+                </li>
+            }
+
+            @* Nút "..." sau *@
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages - 2)
+
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.TotalPages, searchString = ViewBag.SearchString })">@ViewBag.TotalPages</a>
+                </li>
+            }
+
+            @* Nút "Trang cuối" *@
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.TotalPages, searchString = ViewBag.SearchString })">»</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

@@ -20,24 +20,37 @@ namespace ExamManagement.Areas.AdminManagement.Controllers
         }
 
         // GET: AdminManagement/Questions
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, int page = 1)
         {
-            var examManagementContext = _context.Questions
-                .Include(q => q.CreatedByNavigation)
-                .Include(q => q.Subject)
-                .Include(q => q.Answers) // Bao gồm cả danh sách câu trả lời
-                .AsQueryable(); // Đảm bảo có thể tiếp tục áp dụng bộ lọc
+            int pageSize = 10;
 
-            // Nếu có từ khóa tìm kiếm, áp dụng điều kiện lọc
+            var query = _context.Questions
+                .Include(q => q.Subject)
+                .Include(q => q.CreatedByNavigation)
+                .AsNoTracking();
+
             if (!string.IsNullOrEmpty(searchString))
             {
-                examManagementContext = examManagementContext.Where(q =>
-                    q.Content.Contains(searchString) ||
-                    q.Subject.SubjectName.Contains(searchString));
+                query = query.Where(q => q.Content.Contains(searchString) || q.Subject.SubjectName.Contains(searchString));
             }
 
-            return View(await examManagementContext.ToListAsync());
+            int totalRecords = await query.CountAsync();
+            var questions = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.TotalRecords = totalRecords;
+            ViewBag.PageSize = pageSize;
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+            ViewBag.SearchString = searchString;
+
+            return View(questions);
         }
+
+
+
 
         // GET: AdminManagement/Questions/Details/5
         public async Task<IActionResult> Details(int? id)

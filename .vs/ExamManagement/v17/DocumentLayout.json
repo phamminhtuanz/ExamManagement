@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\DATN\\ExamManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\views\\examresults\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\views\\examresults\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\views\\answers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\views\\answers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\models\u200B\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:models\u200B\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\areas\\adminmanagement\\controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|c:\\datn\\exammanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11FE4555-08CE-4230-952D-A93430FF90EE}|ExamManagement.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,16 +41,94 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 143,
-          "SelectedChildIndex": 2,
+          "DockedHeight": 182,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "RelativeToolTip": "Areas\\AdminManagement\\Views\\ExamResults\\Index.cshtml",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAAAJ4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T02:59:15.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Models\u200B\\Question.cs",
+              "RelativeDocumentMoniker": "Models\u200B\\Question.cs",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Models\u200B\\Question.cs",
+              "RelativeToolTip": "Models\u200B\\Question.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T02:45:25.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AnswersController.cs",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\AnswersController.cs",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\AnswersController.cs",
+              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AnswersController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T02:39:00.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QuestionsController.cs",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
+              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\QuestionsController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T02:31:22.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
+              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Questions\\Index.cshtml",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAYwLQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T02:29:19.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
+              "ToolTip": "C:\\DATN\\ExamManagement\\Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
+              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Answers\\Index.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAYwNMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T02:27:22.43Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -39,13 +141,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\DATN\\ExamManagement\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\DATN\\ExamManagement\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAiwFgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAiwFgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-18T07:58:13.194Z",
               "EditorCaption": ""
@@ -53,7 +155,7 @@
           ]
         },
         {
-          "DockedHeight": 97,
+          "DockedHeight": 58,
           "SelectedChildIndex": -1,
           "Children": [
             {
