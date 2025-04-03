@@ -1,8 +1,208 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard";
+    ViewData["Title"] = "Bảng điều khiển";
+
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Dashboard</h1>
-<p>Đây là nội dung trang chủ admin</p>
+<!-- CSS -->
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="~/css/ruang-admin.min.css" rel="stylesheet">
 
+<div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+        <div class="container-fluid" id="container-wrapper">
+            <div class="row mb-3">
+                <!-- Số lượng đề thi -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Số lượng đề thi</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.sodethi</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Số lượng bài đã làm -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Số lượng bài đã làm</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.sobaidalam</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-shopping-cart fa-2x text-success"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Số lượng sinh viên -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Số lượng sinh viên</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@ViewBag.sohocsinh</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-users fa-2x text-info"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Số bài đạt -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Số bài đạt</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.sobaidat</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-comments fa-2x text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biểu đồ diện tích: Số lượng bài làm theo tháng -->
+                <div class="col-xl-8 col-lg-7">
+                    <div class="card mb-4">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Báo cáo tổng hợp hàng tháng</h6>
+                        
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="myAreaChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biểu đồ tròn: Phần trăm điểm trung bình, khá, giỏi -->
+                <div class="col-xl-4 col-lg-5">
+                    <div class="card mb-4">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Phân bố điểm số</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-pie">
+                                <canvas id="myPieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Logout -->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabelLogout">Ôi không!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Bạn có chắc chắn muốn đăng xuất không?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Hủy bỏ</button>
+                            <a href="login.html" class="btn btn-primary">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="~/vendor/js/ruang-admin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JavaScript để vẽ biểu đồ -->
+<script>
+    // Biểu đồ diện tích: Số lượng bài làm theo tháng
+    const areaLabels = @Html.Raw(ViewBag.ChartLabels);
+    const areaData = @Html.Raw(ViewBag.ChartData);
+
+    const areaCtx = document.getElementById('myAreaChart').getContext('2d');
+    new Chart(areaCtx, {
+        type: 'line',
+        data: {
+            labels: areaLabels,
+            datasets: [{
+                label: 'Số bài làm',
+                data: areaData,
+                backgroundColor: 'rgba(78, 115, 223, 0.5)',
+                borderColor: 'rgba(78, 115, 223, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                x: { title: { display: true, text: 'Tháng' } },
+                y: { title: { display: true, text: 'Số bài đã làm' }, beginAtZero: true }
+            },
+            plugins: {
+                legend: { display: true, position: 'top' },
+                title: { display: true, text: 'Số Lượng Bài Làm Theo Tháng' }
+            }
+        }
+    });
+
+    // Biểu đồ tròn: Phần trăm điểm trung bình, khá, giỏi
+    const pieLabels = @Html.Raw(ViewBag.PieLabels);
+    const pieData = @Html.Raw(ViewBag.PieData);
+
+    const pieCtx = document.getElementById('myPieChart').getContext('2d');
+    new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: pieLabels,
+            datasets: [{
+                data: pieData,
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.8)',  // Màu cho Trung bình
+                    'rgba(75, 192, 192, 0.8)',  // Màu cho Khá
+                    'rgba(54, 162, 235, 0.8)'   // Màu cho Giỏi
+                ],
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: true, position: 'top' },
+                title: { display: true, text: 'Phần Trăm Điểm Trung Bình, Khá, Giỏi' }
+            }
+        }
+    });
+</script>

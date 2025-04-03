@@ -126,8 +126,8 @@
 
             <!-- Nhớ mật khẩu -->
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe" style="margin-right:10px">
-                <label class="form-check-label" for="rememberMe">Nhớ mật khẩu</label>
+                <input type="checkbox" class="form-check-input" id="rememberMe_ad" style="margin-right:10px">
+                <label class="form-check-label" for="rememberMe_ad">Nhớ mật khẩu</label>
             </div>
 
             <button type="submit" class="btn btn-primary">Đăng nhập</button>
@@ -140,21 +140,21 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Lấy dữ liệu từ localStorage nếu có
-            if (localStorage.getItem("rememberMe") === "true") {
-                document.getElementById("rememberMe").checked = true;
-                document.querySelector("input[name='Email']").value = localStorage.getItem("savedEmail");
-                document.querySelector("input[name='Password']").value = localStorage.getItem("savedPassword");
+            if (localStorage.getItem("rememberMe_ad") === "true") {
+                document.getElementById("rememberMe_ad").checked = true;
+                document.querySelector("input[name='Email']").value = localStorage.getItem("Email");
+                document.querySelector("input[name='Password']").value = localStorage.getItem("Password");
             }
 
             document.querySelector("form").addEventListener("submit", function () {
-                if (document.getElementById("rememberMe").checked) {
-                    localStorage.setItem("rememberMe", "true");
-                    localStorage.setItem("savedEmail", document.querySelector("input[name='Email']").value);
-                    localStorage.setItem("savedPassword", document.querySelector("input[name='Password']").value);
+                if (document.getElementById("rememberMe_ad").checked) {
+                    localStorage.setItem("rememberMe_ad", "true");
+                    localStorage.setItem("Email", document.querySelector("input[name='Email']").value);
+                    localStorage.setItem("Password", document.querySelector("input[name='Password']").value);
                 } else {
-                    localStorage.removeItem("rememberMe");
-                    localStorage.removeItem("savedEmail");
-                    localStorage.removeItem("savedPassword");
+                    localStorage.removeItem("rememberMe_ad");
+                    localStorage.removeItem("Email");
+                    localStorage.removeItem("Password");
                 }
             });
         });
