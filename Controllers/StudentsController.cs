@@ -71,8 +71,9 @@ namespace ExamManagement.Controllers
             {
                 return NotFound();
             }
-
+            
             var student = await _context.Students.FindAsync(id);
+            ViewBag.pass = student.Password;
             if (student == null)
             {
                 return NotFound();
@@ -85,10 +86,11 @@ namespace ExamManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentId,Username,Password,School,FullName,Email")] Student student)
+        public async Task<IActionResult> Edit(int id,int studentId, [Bind("StudentId,Username,Password,School,FullName,Email")] Student student)
         {
-            if (id != student.StudentId)
+            if (studentId != student.StudentId)
             {
+                Console.WriteLine("\n\n\n\n\n\n\n đã chạy"+student.StudentId+"\n"+id);
                 return NotFound();
             }
 
@@ -110,7 +112,8 @@ namespace ExamManagement.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Details));
+                return Redirect("/Students/Details?Studentid=" + studentId);
+
             }
             return View(student);
         }

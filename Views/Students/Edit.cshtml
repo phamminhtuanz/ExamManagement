@@ -5,82 +5,201 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!-- CSS tùy chỉnh theo bảng màu -->
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
+    /* General styling */
     body {
+        background-color: #f4f7fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+        max-width: 700px;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Form container */
+    .form-container {
         background-color: #ffffff;
-        color: #404080;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease;
     }
 
-    h1 {
-        color: #ff9000;
-        margin-bottom: 20px;
+    .form-container:hover {
+        transform: translateY(-3px);
     }
 
-    h4 {
-        color: #ff9000;
+    /* Titles */
+    .form-title {
+        color: #e67e22;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 
+    .section-title {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Form elements */
+    .form-label {
+        font-weight: 500;
+        color: #34495e;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .form-control {
+        border: 1px solid #dcdcdc;
+        border-radius: 8px;
+        padding: 0.75rem;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #e67e22;
+        box-shadow: 0 0 8px rgba(230, 126, 34, 0.2);
+        outline: none;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: block;
+    }
+
+    /* Buttons */
     .btn-custom {
-        background-color: #ff9000;
-        border-color: #ff9000;
-        color: #ffffff;
+        background-color: #e67e22;
+        border: none;
+        color: #fff;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-        .btn-custom:hover {
-            background-color: #404080;
-            border-color: #404080;
+    .btn-custom:hover {
+        background-color: #d35400;
+        transform: translateY(-2px);
+    }
+
+    .btn-custom:active {
+        transform: translateY(0);
+    }
+
+    /* Back link */
+    .back-link {
+        color: #3498db;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+        color: #2980b9;
+        text-decoration: none;
+    }
+
+    /* Validation summary */
+    .alert-danger {
+        border-radius: 8px;
+        padding: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 576px) {
+        .form-container {
+            padding: 1.5rem;
         }
+
+        .form-title {
+            font-size: 1.75rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+        }
+    }
 </style>
 
-<h1>Chỉnh sửa</h1>
+<div class="container">
+    <h1 class="form-title"><i class="fas fa-edit"></i> Chỉnh sửa</h1>
+    <h4 class="section-title"><i class="fas fa-user-graduate"></i> Thông tin sinh viên</h4>
+    <hr />
 
-<h4>Sinh viên</h4>
-<hr />
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="form-container">
+                <form asp-action="Edit" asp-controller="Students" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    <input type="hidden" asp-for="StudentId" />
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="StudentId" />
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
+                    <div class="mb-3">
+                        <label asp-for="Username" class="form-label">Tên đăng nhập</label>
+                        <input asp-for="Username" class="form-control" placeholder="Nhập tên đăng nhập" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Mật khẩu</label>
+                        <input asp-for="Password" value="@ViewBag.pass" class="form-control" type="password" placeholder="Nhập mật khẩu" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="School" class="form-label">Trường học</label>
+                        <input asp-for="School" class="form-control" placeholder="Nhập tên trường" />
+                        <span asp-validation-for="School" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label">Họ và tên</label>
+                        <input asp-for="FullName" class="form-control" placeholder="Nhập họ và tên" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control" type="email" placeholder="Nhập email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-custom">
+                            <i class="fas fa-save"></i> Lưu
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="School" class="control-label"></label>
-                <input asp-for="School" class="form-control" />
-                <span asp-validation-for="School" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Lưu" class="btn btn-custom" />
-            </div>
-        </form>
+
+            <a href="javascript:history.back()" class="back-link mt-3">
+                <i class="fas fa-arrow-left"></i> Trở lại danh sách
+            </a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a onclick="window.history.back();">Trở lại danh sách</a>
-</div>
-
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
